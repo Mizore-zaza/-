@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍 | 主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        nav {
+            background: #2c3e50;
+            padding: 1rem 5%;
+            text-align: center;
+        }
+        nav h1 {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* 头部横幅 */
+        .banner {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+            object-position: 35% 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .banner h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* 主体容器 */
+        .container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3498db;
+            padding-left: 0.8rem;
+        }
+
+        /* 技能板块 */
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .skill-tag {
+            background: #e8f4fc;
+            color: #3498db;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+        }
+
+        /* 联系方式 */
+        .contact a {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            margin: 0.5rem 1rem 0 0;
+            font-size: 1.05rem;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2c3e50;
+            color: #ccc;
+            margin-top: 2rem;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .banner {
+                padding: 2rem 1rem;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .banner h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <h1>我的个人主页</h1>
+    </nav>
+
+    <!-- 头部个人信息 -->
+    <div class="banner">
+        <!-- 替换 src 为你的头像图片地址 -->
+        <img class="avatar" src="https://i1.hdslb.com/bfs/new_dyn/e120d64c93077abe28ec0a9287591d3043433052.jpg@432w_270h_1s.avif" alt="头像">
+        <h2>赵志国</h2>
+        <p>学生 / 杭州 / INFP</p>
+    </div>
+
+    <!-- 主体内容 -->
+    <div class="container">
+        <!-- 个人简介 -->
+        <div class="card">
+            <h3>关于我</h3>
+            <p>
+                浙传24数技1班，媒工足球队，喜欢看电影，🎸学习中，热爱电子游戏。
+        
+            </p>
+        </div>
+
+        <!-- 技能/特长 -->
+        <div class="card">
+            <h3>爱好</h3>
+            <div class="skill-list">
+                <span class="skill-tag">怪物猎人</span>
+                <span class="skill-tag">死亡搁浅</span>
+                <span class="skill-tag">足球</span>
+                <span class="skill-tag">明日方舟</span>
+            
+            </div>
+        </div>
+
+        <!-- 座右铭 -->
+        <div class="card">
+            <h3>座右铭</h3>
+            <p>好想躺平</p>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="card contact">
+            <h3>联系我</h3>
+            <a href="#">微信：zzg19518868617</a>
+            <a href="#">邮箱：3483652826@qq.com</a>
+            <a href="#">QQ：3483653824</a>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2026 个人主页 | 版权所有</p>
+    </footer>
+</body>
+</html>
