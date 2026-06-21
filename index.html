@@ -23,6 +23,10 @@
             background: #2c3e50;
             padding: 1rem 5%;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         nav h1 {
             color: #fff;
@@ -69,10 +73,11 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
         .card h3 {
             color: #2c3e50;
@@ -94,15 +99,74 @@
             color: #3498db;
             padding: 0.5rem 1.2rem;
             border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        .skill-tag:hover {
+            background: #d1e7fd;
+        }
+
+        /* 教育经历 */
+        .edu-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .edu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .edu-item h4 {
+            color: #3498db;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .edu-item .time {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 项目/实践板块 */
+        .project-item {
+            margin-bottom: 1.5rem;
+        }
+        .project-item h4 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-item h4::before {
+            content: "📌";
+            font-size: 1rem;
+        }
+        .project-item p {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+
+        /* 感悟板块 */
+        .thoughts {
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
         }
 
         /* 联系方式 */
         .contact a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             color: #3498db;
             text-decoration: none;
             margin: 0.5rem 1rem 0 0;
             font-size: 1.05rem;
+            gap: 0.3rem;
         }
         .contact a:hover {
             text-decoration: underline;
@@ -115,6 +179,14 @@
             background: #2c3e50;
             color: #ccc;
             margin-top: 2rem;
+            border-top: 3px solid #3498db;
+        }
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        footer .copyright {
+            font-size: 0.9rem;
+            color: #999;
         }
 
         /* 移动端适配 */
@@ -128,6 +200,13 @@
             }
             .banner h2 {
                 font-size: 1.6rem;
+            }
+            .contact a {
+                display: block;
+                margin: 0.8rem 0;
+            }
+            .project-item p {
+                margin-left: 0;
             }
         }
     </style>
@@ -143,7 +222,7 @@
         <!-- 替换 src 为你的头像图片地址 -->
         <img class="avatar" src="https://i1.hdslb.com/bfs/new_dyn/e120d64c93077abe28ec0a9287591d3043433052.jpg@432w_270h_1s.avif" alt="头像">
         <h2>赵志国</h2>
-        <p>学生 / 杭州 / INFP</p>
+        <p>学生 / 杭州 / INFP / 数字技术专业</p>
     </div>
 
     <!-- 主体内容 -->
@@ -152,41 +231,90 @@
         <div class="card">
             <h3>关于我</h3>
             <p>
-                浙传24数技1班，媒工足球队，喜欢看电影，🎸学习中，热爱电子游戏。
-        
+                浙传24数技1班在读，媒工足球队成员，热爱生活的INFP型人格。平时喜欢看电影（尤其偏爱剧情片和科幻片），
+                正在学习吉他🎸，是电子游戏深度爱好者，享受在虚拟世界中探索和体验不同的故事。
+                性格慢热但真诚，喜欢安静的环境，也享受和朋友一起踢球、聊天的时光。
             </p>
         </div>
 
-        <!-- 技能/特长 -->
+        <!-- 教育经历 -->
         <div class="card">
-            <h3>爱好</h3>
+            <h3>教育经历</h3>
+            <div class="edu-item">
+                <h4>浙江传媒学院 - 数字媒体技术专业</h4>
+                <div class="time">2024年9月 - 至今</div>
+                <p>主修课程：数字媒体技术基础、程序设计、影视后期基础、交互设计等；<br>
+                在校参与：媒工足球队、校园音乐社团（吉他组）。</p>
+            </div>
+            <div class="edu-item">
+                <h4>高中 - 江苏省淮安市新马中学</h4>
+                <div class="time">2021年9月 - 2024年6月</div>
+                <p>理科方向，曾获校级足球赛最佳射手，课余自学基础编程和吉他入门。</p>
+            </div>
+        </div>
+
+        <!-- 技能/爱好 -->
+        <div class="card">
+            <h3>爱好与特长</h3>
             <div class="skill-list">
                 <span class="skill-tag">怪物猎人</span>
                 <span class="skill-tag">死亡搁浅</span>
                 <span class="skill-tag">足球</span>
                 <span class="skill-tag">明日方舟</span>
-            
+                <span class="skill-tag">吉他弹唱</span>
+                <span class="skill-tag">电影赏析</span>
+                <span class="skill-tag">剧情向游戏</span>
+                <span class="skill-tag">轻度摄影</span>
+            </div>
+        </div>
+
+        <!-- 项目/实践 -->
+        <div class="card">
+            <h3>日常实践/小项目</h3>
+            <div class="project-item">
+                <h4>个人游戏心得整理</h4>
+                <p>整理怪物猎人、死亡搁浅等游戏的玩法攻略和剧情解读，发布在个人社交平台，收获少量同好关注。</p>
+            </div>
+            <div class="project-item">
+                <h4>校园足球赛</h4>
+                <p>25学年浙传足球俱乐部参赛，司职后卫，帮助球队夺得冠军，负责后场防守反击。</p>
+            </div>
+            <div class="project-item">
+                <h4>吉他翻唱</h4>
+                <p>自学吉他半年，能完成简单的流行歌曲弹唱，偶尔在宿舍和朋友小聚时表演。</p>
+            </div>
+        </div>
+
+        <!-- 个人感悟 -->
+        <div class="card">
+            <h3>个人感悟</h3>
+            <p>作为INFP，总喜欢在生活中寻找细碎的美好。</p>
+            <div class="thoughts">
+                "好想躺平，但也知道躺平的前提是先用力奔跑过。喜欢游戏里的沉浸式体验，因为能暂时逃离现实的琐碎，
+                但也明白现实里的足球、吉他、朋友和课堂，才是构成生活本身的温度。
+                慢慢来，不着急，按自己的节奏走，就是最好的状态。"
             </div>
         </div>
 
         <!-- 座右铭 -->
         <div class="card">
             <h3>座右铭</h3>
-            <p>好想躺平</p>
+            <p>好想躺平，但也想在躺平前，把想做的事都试一遍✨</p>
         </div>
 
         <!-- 联系方式 -->
         <div class="card contact">
             <h3>联系我</h3>
-            <a href="#">微信：zzg19518868617</a>
-            <a href="#">邮箱：3483652826@qq.com</a>
-            <a href="#">QQ：3483653824</a>
+            <a href="#">📱 微信：zzg19518868617</a>
+            <a href="mailto:3483652826@qq.com">📧 邮箱：3483652826@qq.com</a>
+            <a href="#">💬 QQ：3483653824</a>
         </div>
     </div>
 
     <!-- 页脚 -->
     <footer>
-        <p>© 2026 个人主页 | 版权所有</p>
+        <p>我的个人小站 | 记录生活与热爱</p>
+        <p class="copyright">© 2026 赵志国 版权所有</p>
     </footer>
 </body>
 </html>
